@@ -1,0 +1,73 @@
+@import "../../global.scss";
+.topbar{
+
+    background-color: white;
+    color:  black;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    transition: all 1s;
+    width: 100%;
+    z-index: 3;
+    .wrapper{
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left{
+            display: flex;
+            align-items: center;
+            .logo{
+                font-size: 30px;
+                font-weight: 500;
+                text-decoration: none;
+                color: inherit;
+                margin-right: 40px;
+            }
+            .itemContainer{
+                display: flex;
+                align-items: center;
+                margin-left: 30px;
+                @include mobile{
+                    display: none;
+                }
+                span{
+                    font-size: 15px;
+                    font-weight: 800;
+                }
+            }
+        }
+        .right{
+            .sidebar{
+                width: 35px;
+                height: 24px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                span{
+                    width: 100%;
+                    height: 3px;
+                    background-color: $maincolor;
+                }
+            }
+        }
+    }
+    &.active{
+        background-color: $maincolor;
+        color: white;
+        .sidebar{
+            span{
+                &:first-child{
+                    background-color: white;
+                }
+                &:nth-child(2){
+                    background-color: white;
+                }
+                &:last-child{
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
